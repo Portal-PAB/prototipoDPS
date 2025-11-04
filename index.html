@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css" />
+
     <title>Protótipo | DPS</title>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <style>
       
@@ -37,13 +37,13 @@
   </head>
   <body>
     <header>
-      <h1>Protótipo - Differentiated Problem Solving</h1>  
+      <h1>Protótipo - Differentiated Problem Solving</h1>
       <nav>
         <ul>
-            <a href="#funcoes"><li>Funções e Modelagem</li></a>
-            <a href="#limites"><li>Limites</li></a>
-            <a href="#derivadas"><li>Derivadas</li></a>
-            <a href="#integrais"><li>Integrais</li></a>
+          <a href="#funcoes"><li>Funções e Modelagem</li></a>
+          <a href="#limites"><li>Limites</li></a>
+          <a href="#derivadas"><li>Derivadas</li></a>
+          <a href="#integrais"><li>Integrais</li></a>
         </ul>
       </nav>
     </header>
@@ -53,351 +53,141 @@
         <h2>Funções e Modelagem</h2>
 
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Crescimento de Seguidores (8% ao mês)</h3>
           <canvas id="seguidoresChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> f(t) = 5000 × (1.08)<sup>t</sup></p>
+          <p>
+            <em>Interpretação:</em> A jogadora começa com 5.000 seguidores e
+            cresce 8% ao mês
+          </p>
         </div>
 
         <div class="chart-container">
-          <h3>2. Audiência em Finais do Campeonato Brasileiro Feminino</h3>
+          <h3>Audiência em Finais do Campeonato Brasileiro Feminino</h3>
           <canvas id="audienciaChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> A(t) = 10000 × (1.35)<sup>t</sup></p>
+          <p>
+            <em>Interpretação:</em> A função foi utilizada para modelar o
+            crescimento da audiência entre 2021 e 2024. Em 2025, o valor real de
+            42.566 espectadores na final entre Corinthians e Ferroviária superou
+            a projeção, evidenciando um salto significativo na visibilidade do
+            futebol feminino.
+          </p>
         </div>
 
         <div class="chart-container">
-          <h3>3. Comparação de Velocidade das Jogadoras</h3>
+          <h3>Comparação de Velocidade das Jogadoras</h3>
           <canvas id="velocidadeChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função atleta A:</em> V<sub>a</sub>(t) = 5 + 0.5t</p>
+          <p><em>Função atleta B:</em> V<sub>b</sub>(t) = 6</p>
+          <p>
+            <em>Interpretação:</em> Jogadora A ultrapassa a velocidade da B após
+            2 segundos
+          </p>
         </div>
       </section>
 
-      <section>
+      <section id="limites">
         <h2>Limites</h2>
-        <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
-          <canvas id="seguidoresLimChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+
+        <div class="container">
+          <div class="chart-container">
+            <h3>
+              Crescimento de Seguidores (8% ao mês) à medida que t -> &infin;
+            </h3>
+            <canvas id="seguidoresLimChart"></canvas>
+            <p><em>Função:</em> f(t) = 5000 × (1.08)<sup>t</sup></p>
+            <p>
+              <em>Interpretação:</em> O número de seguidores tende ao infinito,
+              mas na prática há um limite de público.
+            </p>
+          </div>
+
+          <div class="chart-container">
+            <h3>Crescimento de Seguidores Limite Saturado (Hipótese)</h3>
+            <canvas id="seguidoresLimSatChart"></canvas>
+            <p><em>Função:</em> f(t) = 50000 × (1 − e<sup>−0.15t</sup>)</p>
+            <p>
+              <em>Interpretação:</em> O gráfico mostra um crescimento rápido de
+              seguidores no início, que desacelera até se estabilizar em um
+              limite máximo de 50 000.
+            </p>
+          </div>
         </div>
+
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Audiência em Finais do Campeonato à medida que t -> &infin;</h3>
+          <canvas id="audienciaLimChart"></canvas>
+          <p><em>Função:</em> A(t) = 10000 + 700t</p>
+          <p>
+            <em>Interpretação:</em> : o modelo mostra aumento contínuo, mas não
+            considera limitações reais como capacidade de estádios ou interesse
+            do público
+          </p>
+        </div>
+
+        <div class="chart-container">
+          <h3>Velocidade da Jogadora A à medida que t -> &infin;</h3>
           <canvas id="velocidadeLimChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função atleta A:</em> V<sub>a</sub>(t) = 5 + 0.5t</p>
+          <p>
+            <em>Interpretação:</em> Fisicamente impossível — nenhuma atleta
+            acelera para sempre; o modelo é válido apenas nos primeiros segundos
+          </p>
         </div>
       </section>
 
-      <section>
+      <section id="derivadas">
         <h2>Derivadas</h2>
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Velocidade de uma jogadora</h3>
           <canvas id="velocidadeDerChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> s(t) = 5t + 0.25t<sup>2</sup></p>
+          <p><em>Derivada:</em> v(t) = 5 + 0.5t</p>
+          <p>
+            <em>Interpretação:</em> A jogadora acelera constantemente a 0.5
+            m/s², como a derivada é constante, não há máximos ou mínimos — a
+            velocidade só aumenta.
+          </p>
         </div>
+
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Crescimento de engajamento em campanha digital</h3>
           <canvas id="engajamentoDerChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> E(t) = -t <sup>2</sup> + 10t</p>
+          <p><em>Derivada:</em> E<sup>`</sup>(t) = -2t + 10</p>
+          <p>
+            <em>Interpretação:</em> O engajamento cresce até o 5º dia e depois
+            começa a cair, curva parabólica com ponto máximo em t=5
+          </p>
         </div>
       </section>
 
-      <section>
+      <section id="integrais">
         <h2>Integrais</h2>
 
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Distância percorrida pela Jogadora A</h3>
           <canvas id="distanciaIntChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> s(t) = 5t + 0.25t<sup>2</sup></p>
+          <p>Distância percorrida entre t = 0 e t = 10</p>
+          <p>
+            <em>Interpretação:</em> A jogadora percorre 75 metros em 10
+            segundos.
+          </p>
         </div>
-      </section>
 
         <div class="chart-container">
-          <h3>1. Crescimento de Seguidores (8% ao mês)</h3>
+          <h3>Engajamento total em campanha digital</h3>
           <canvas id="engajamentoIntChart"></canvas>
-          <p><i>Função:</i> f(t) = 5000 × (1.08)<sup>t</sup></p>
-          <!-- Deixar semântico depois -->
+          <p><em>Função:</em> E(t) = -t <sup>2</sup> + 10t</p>
+          <p>Integral de E(t) entre t = 0 e t = 10</p>
+          <p>
+            <em>Interpretação:</em> Mostra o número de interações por dia, e a área sob a curva representa o total acumulado de interações durante a campanha.
+          </p>
         </div>
       </section>
     </main>
-
-    <!-- <script>
-      // 1. Crescimento de Seguidores
-      const tempo = Array.from({ length: 25 }, (_, i) => i);
-      const seguidores = tempo.map((x) => 5000 * Math.pow(1.08, x));
-      new Chart(document.getElementById("seguidoresChart"), {
-        type: "line",
-        data: {
-          labels: tempo,
-          datasets: [
-            {
-              label: "Seguidores (f(t))",
-              data: seguidores,
-              borderColor: "#0077cc",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.2,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "Tempo (meses)" } },
-            y: { title: { display: true, text: "Seguidores" } },
-          },
-        },
-      });
-
-      // 2. Audiência em Finais do Campeonato Brasileiro
-
-      // 3. Comparação de Velocidade das Jogadoras
-      const tempo2 = Array.from({ length: 11 }, (_, i) => i);
-
-      // Velocidade da Jogadora A: v(t) = 5 + 0.5t
-      const velocidadeA = tempo.map((t) => 5 + 0.5 * t);
-
-      // Velocidade da Jogadora B: constante 6 m/s
-      const velocidadeB = tempo.map(() => 6);
-
-      new Chart(document.getElementById("velocidadeChart"), {
-        type: "line",
-        data: {
-          labels: tempo2,
-          datasets: [
-            {
-              label: "Jogadora A (aceleração)",
-              data: velocidadeA,
-              borderColor: "blue",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 4,
-              pointBackgroundColor: "blue",
-            },
-            {
-              label: "Jogadora B (constante)",
-              data: velocidadeB,
-              borderColor: "red",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 4,
-              pointBackgroundColor: "red",
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            legend: { display: true },
-          },
-          scales: {
-            x: {
-              title: { display: true, text: "Tempo (s)" },
-            },
-            y: {
-              title: { display: true, text: "Velocidade (m/s)" },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      // 4. Crescimento de Seguidores
-      const meses = Array.from({ length: 25 }, (_, i) => i); // 0 a 24 meses
-      const seguidoresLim = meses.map((t) => 5000 * Math.pow(1.08, t));
-
-      new Chart(document.getElementById("seguidoresLimChart"), {
-        type: "line",
-        data: {
-          labels: meses,
-          datasets: [
-            {
-              label: "Seguidores (f(t) = 5000 × 1.08^t)",
-              data: seguidoresLim,
-              borderColor: "green",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 3,
-              pointBackgroundColor: "green",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "Meses" } },
-            y: {
-              title: { display: true, text: "Número de Seguidores" },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      //   5.
-      const segundos = Array.from({ length: 21 }, (_, i) => i); // 0 a 20 segundos
-      const velocidade = segundos.map((t) => 5 + 0.5 * t);
-
-      new Chart(document.getElementById("velocidadeLimChart"), {
-        type: "line",
-        data: {
-          labels: segundos,
-          datasets: [
-            {
-              label: "Velocidade (v(t) = 5 + 0.5t)",
-              data: velocidade,
-              borderColor: "red",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 3,
-              pointBackgroundColor: "red",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "Tempo (s)" } },
-            y: {
-              title: { display: true, text: "Velocidade (m/s)" },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      //   6
-      const tempo3 = Array.from({ length: 21 }, (_, i) => i); // 0 a 20 segundos
-
-      // Velocidade: v(t) = 5 + 0.5t
-      const velocidade3 = tempo3.map((t) => 5 + 0.5 * t);
-
-      new Chart(document.getElementById("velocidadeDerChart"), {
-        type: "line",
-        data: {
-          labels: tempo3,
-          datasets: [
-            {
-              label: "Velocidade da Jogadora A (v(t) = 5 + 0.5t)",
-              data: velocidade3,
-              borderColor: "red",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 3,
-              pointBackgroundColor: "red",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "Tempo (s)" } },
-            y: {
-              title: { display: true, text: "Velocidade (m/s)" },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-      //   7
-      const dias = Array.from({ length: 11 }, (_, i) => i); // 0 a 10 dias
-
-      // Engajamento: E(t) = -t^2 + 10t
-      const engajamento = dias.map((t) => -Math.pow(t, 2) + 10 * t);
-
-      new Chart(document.getElementById("engajamentoDerChart"), {
-        type: "line",
-        data: {
-          labels: dias,
-          datasets: [
-            {
-              label: "Engajamento (E(t) = -t² + 10t)",
-              data: engajamento,
-              borderColor: "blue",
-              borderWidth: 2,
-              fill: false,
-              tension: 0.3,
-              pointRadius: 3,
-              pointBackgroundColor: "blue",
-            },
-          ],
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "Dias" } },
-            y: {
-              title: { display: true, text: "Engajamento (interações)" },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-
-
-      const tempo4 = Array.from({ length: 11 }, (_, i) => i); // 0 a 10 segundos
-  const distancia4 = tempo4.map(t => 5 * t + 0.25 * t * t); // s(t) = 5t + 0.25t²
-
-  new Chart(document.getElementById("distanciaIntChart"), {
-    type: "line",
-    data: {
-      labels: tempo4,
-      datasets: [{
-        label: "Distância (s(t) = 5t + 0.25t²)",
-        data: distancia4,
-        borderColor: "purple",
-        borderWidth: 2,
-        fill: true,
-        backgroundColor: "rgba(128,0,128,0.2)",
-        tension: 0.3,
-        pointRadius: 3,
-        pointBackgroundColor: "purple"
-      }]
-    },
-    options: {
-      scales: {
-        x: { title: { display: true, text: "Tempo (s)" } },
-        y: { title: { display: true, text: "Distância (m)" }, beginAtZero: true }
-      }
-    }
-  });
-
-
-
-  const dias4 = Array.from({ length: 11 }, (_, i) => i); // 0 a 10 dias
-  const engajamento4 = dias4.map(t => -t * t + 10 * t); // E(t) = -t² + 10t
-
-  new Chart(document.getElementById("engajamentoIntChart"), {
-    type: "line",
-    data: {
-      labels: dias4,
-      datasets: [{
-        label: "Engajamento acumulado (E(t) = -t² + 10t)",
-        data: engajamento4,
-        borderColor: "blue",
-        borderWidth: 2,
-        fill: true,
-        backgroundColor: "rgba(0,0,255,0.2)",
-        tension: 0.3,
-        pointRadius: 3,
-        pointBackgroundColor: "blue"
-      }]
-    },
-    options: {
-      scales: {
-        x: { title: { display: true, text: "Dias" } },
-        y: { title: { display: true, text: "Engajamento (interações)" }, beginAtZero: true }
-      }
-    }
-  });
-
-
-    </script> -->
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
